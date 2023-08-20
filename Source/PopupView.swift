@@ -459,7 +459,7 @@ public struct Popup<PopupContent: View>: ViewModifier {
         }
 
 #if !os(tvOS)
-        let drag = DragGesture()
+        let drag = DragGesture(minimumDistance: 10)
             .updating($dragState) { drag, state, _ in
                 state = .dragging(translation: drag.translation)
             }
